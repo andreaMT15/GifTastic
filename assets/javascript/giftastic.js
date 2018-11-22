@@ -4,7 +4,8 @@ var movies = [
   "Wonder Woman",
   "Star Wars",
   "Mulan",
-  "Harry Potter"
+  "Harry Potter",
+  "Toy Story"
 ];
 
 function createButtons() {
@@ -21,7 +22,7 @@ createButtons();
 $(document).on("click", "button", function(event) {
   event.preventDefault();
   var movie = $(this).attr("data-movie") || $("#movie-input").val();
-  // console.log(movie);
+  console.log(movie);
   if (movies.indexOf(movie) === -1) {
     movies.push(movie);
   }
@@ -43,8 +44,9 @@ function giphySearch(movie) {
     var results = response.data;
     for (var i = 0; i < results.length; i++) {
       var gifDiv = $("<div>");
-      gifDiv.attr("id" + "gif-" + i);
+      gifDiv.attr("id", "gif-" + i);
       var rating = $("<p>").text("Rating: " + results[i].rating);
+      rating.addClass("rating");
       var movieImage = $("<img>");
       movieImage.attr({
         src: results[i].images.fixed_height_still.url,
@@ -55,22 +57,14 @@ function giphySearch(movie) {
       });
       $(gifDiv).append(movieImage);
       $(gifDiv).append(rating);
-
-      $("#gifs").prepend(gifDiv);
+      $("#gifs").append(gifDiv);
     }
   });
   $("#gifs").empty();
-  var instructions = $("<p>").text(
-    "Click the individual GIF's below to animate them! "
-  );
-  $("#instructions").prepend(
-    instructions,
-    '<i class="fas fa-angle-double-down"></i>'
-  );
 }
 
 $(document).on("click", ".gif", function() {
-  console.log("this is working");
+  // console.log("this is working");
   var state = $(this).attr("data-state");
 
   console.log(state);
@@ -83,3 +77,14 @@ $(document).on("click", ".gif", function() {
     $(this).attr("data-state", "still");
   }
 });
+
+function listInstructions() {
+  var instructions = $("<p>").text(
+    "Click the individual GIF's below to animate them!"
+  );
+  $("#instructions").prepend(
+    instructions,
+    '<i class="fas fa-angle-double-down"></i>'
+  );
+}
+listInstructions();
