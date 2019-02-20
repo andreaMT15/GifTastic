@@ -22,7 +22,6 @@ createButtons();
 $(document).on("click", "button", function(event) {
   event.preventDefault();
   var movie = $(this).attr("data-movie") || $("#movie-input").val();
-  // console.log(movie);
   if (movies.indexOf(movie) === -1) {
     movies.push(movie);
   }
@@ -40,7 +39,6 @@ function giphySearch(movie) {
     url: queryURL,
     method: "GET"
   }).then(function(response) {
-    // console.log(response.data);
     var results = response.data;
     for (var i = 0; i < results.length; i++) {
       var gifDiv = $("<div>");
@@ -64,10 +62,7 @@ function giphySearch(movie) {
 }
 
 $(document).on("click", ".gif", function() {
-  // console.log("this is working");
   var state = $(this).attr("data-state");
-
-  // console.log(state);
 
   if (state === "still") {
     $(this).attr("src", $(this).attr("data-animate"));

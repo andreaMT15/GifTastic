@@ -37,7 +37,6 @@ label {
 }
 
 p {
-  /* margin-left: 20px; */
   font-size: 20px;
   line-height: 200%;
   font-weight: 700;
@@ -52,7 +51,8 @@ i {
 
 .rating {
   border: 3px solid navy;
-  width: 25%;
+  min-width: 25%;
+  max-width: 35%;
   text-align: center;
   margin-bottom: 5px;
   background-color: rgb(153, 180, 255);
@@ -67,4 +67,18 @@ button:hover {
   box-shadow: inset 300px 100px 100px 200px white;
   transition: ease-out 0.7s;
   cursor: pointer;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  body {
+    margin-left: 5px;
+  }
+
+  #gifs {
+    margin-left: 5px;
+  }
+
+  .fas {
+    display: none;
+  }
 }
