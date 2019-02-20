@@ -10,7 +10,7 @@ When the user clicks a button it will load meme's to the page along with the rat
 
 <img width="1354" alt="screen shot 2019-02-20 at 5 34 41 pm" src="https://user-images.githubusercontent.com/44379703/53132807-86f1a400-3536-11e9-9d27-333bcd937a86.png">
 
-The user can also create their own button by searching for a Movie. 
+The user can also create their own button by searching for a Movie in the search bar and hitting submit. Once the user searches for a new movie, it will create the new button at the top and also display the GIF's related to the movie searched. 
 
 <img width="1422" alt="screen shot 2019-02-20 at 5 38 30 pm" src="https://user-images.githubusercontent.com/44379703/53132796-7b05e200-3536-11e9-910f-6a31b37f220d.png">
 <img width="1023" alt="screen shot 2019-02-20 at 5 38 23 pm" src="https://user-images.githubusercontent.com/44379703/53132800-7e00d280-3536-11e9-9a25-cb9f6d259a59.png">
